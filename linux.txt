@@ -1,0 +1,124 @@
+==================
+File and Directory
+==================
+pwd : Print current directory
+
+cd : Change to home directory
+cd .. : Change to parent directory
+cd [dir] : Change to specified directory
+
+ls : List directories
+ls --color -lAh : List hidden directories in long, human readable format
+
+touch [file] : Create specified file
+mkdir [dir] : Create specified directory
+
+ln [file] [link] : Create hard link to specified file
+ln -s [file] [link] : Create soft link to specified file
+
+mv [file1] [file2] : Move or rename file1 to file2
+
+cp [file1] [file2]: Copy file1 to file2
+cp -r [dir1] [dir2] : Copy directory1 to directory2, create directory 2 if it doesnt exist
+
+rm [file] : Delete specified file
+rm -r [dir] : Delete specified directory
+rm -f [file] : Force delete specified file
+rm -rf [dir] : Force delete specified directory and its content
+
+cat [file] : Display content of specified file
+
+less [file] : Display content of specified file using pager
+
+head [file] : Display first 10 lines of specified file
+tail [file] : Display last 10 lines of specified file
+tail -f [file] : Display and listen on last 10 lines of specified file
+
+==================
+Process Management
+==================
+ps : Display snapshot of running processes in current shell
+ps -ef --forest : Display snapshot of running processes of system in process tree view
+
+top : Display interactive running processes
+
+kill [pid] : Kill specified PID
+kill -9 [pid] : Kill specified PID gracefully
+kill -15 [pid] : Kill specified PID forcefully
+
+killall [proc] : Kill all processes with specified process name
+
+bg : List stopped or background jobs; Resume stopped job in background
+fg : Brings most recent job to foreground
+
+============
+Disk and RAM
+============
+du -h <file> : Display file disk usage
+df -h : Display free disk space in human readable format
+
+free : Disk RAM usage
+
+================
+File Permissions
+================
+chmod [umask] [file] : Change permission of specified file to as specified umask
+chmod u+s [file]: Enable SetUID to specified file which file will be executed with  file owner's UID
+chomod g+s [file] : Enable SetGID to sepcified file which:
+                        (1) When applied to directory, file or directory created in specified directory will get directory's group ownership;
+                        (2) When applied to file, file will be executed with group owner's GID
+chmod o+t [file] : Enable sticky bit which prevent anyone except directory's owner from deleting file in specified directory
+
+====================
+Redirection and Pipe
+====================
+[cmd] < [file] : Redirect content of specified file as input to specified command
+[cmd] > [file] : Redirect output of specified command to specified file, overwrite if file exist
+[cmd] >> [file] : Append output of specified command to specified file
+[cmd] > /dev/null : Discard the output of specified command
+ 
+[cmd] 2> [file] : Redirect stderr of specified command to specified file
+[cmd] 2>&1 : Redirect stderr of specified command to stdout
+
+[cmd1] | [cmd2] : Redirect output of specified command1 as input of specified command2
+
+[cmd1] | tee [file|cmd2] : Redirect output of specified command to specified file or command and print to stdout
+[cmd1] | xargs [cmd2] : Redirect output of specified command1 as arguments of specified command2
+
+=======
+Command
+=======
+alias [cmd]='[alias]' : Create alias of specified command 
+unalias [alias] : Remove alias of specified alias
+\[cmd] : Execute specified command in clean state, not the alias associated to it
+
+type [cmd] : Display type of specified command (built-in, shell, or alias)
+which [cmd] : Locate binary directory of specified command
+whereis [cmd] : Locate directory related to specified command
+
+==================
+System Information
+==================
+uname
+date
+cal
+uptime
+
+w
+who
+whoami
+
+================
+Users and Groups
+================
+finger user
+
+users
+groups
+
+====
+Help
+====
+man [cmd] : Display man pages of specified command in pager
+xman [cmd] : Display man pages of specified command in x window
+whatis [cmd] : Display in a line the function of specifiedcommand 
